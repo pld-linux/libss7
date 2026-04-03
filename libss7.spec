@@ -1,12 +1,12 @@
 Summary:	SS7 protocol services library
 Summary(pl.UTF-8):	Biblioteka usług protokołu SS7
 Name:		libss7
-Version:	2.0.0
-Release:	1
+Version:	2.0.1
+Release:	2
 License:	GPL v2
 Group:		Libraries
 Source0:	http://downloads.asterisk.org/pub/telephony/libss7/%{name}-%{version}.tar.gz
-# Source0-md5:	93e43adde507d622fd92898b66f8caef
+# Source0-md5:	d3b8814f60595a6723a8cb2b47413180
 URL:		http://www.asterisk.org/
 BuildRequires:	dahdi-tools-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
