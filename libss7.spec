@@ -7,6 +7,7 @@ License:	GPL v2
 Group:		Libraries
 Source0:	http://downloads.asterisk.org/pub/telephony/libss7/%{name}-%{version}.tar.gz
 # Source0-md5:	d3b8814f60595a6723a8cb2b47413180
+Patch0:		x32.patch
 URL:		http://www.asterisk.org/
 BuildRequires:	dahdi-tools-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -51,6 +52,7 @@ Statyczna biblioteka libss7.
 
 %prep
 %setup -q
+%patch -P0 -p1
 
 %build
 %{__make} \
@@ -73,11 +75,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS-* README libss7-%{version}-summary.txt
-%attr(755,root,root) %{_libdir}/libss7.so.*.*
+%{_libdir}/libss7.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libss7.so
+%{_libdir}/libss7.so
 %{_includedir}/libss7.h
 
 %files static
